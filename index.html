@@ -26,7 +26,7 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .forks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:26px}
 @media(max-width:900px){.forks{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.forks{grid-template-columns:1fr}}
-.fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:block;transition:border-color .2s,transform .2s}
+.fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .fork:hover{border-color:var(--purple);transform:translateY(-3px)}
 .fork::before{content:'';position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px}
 .fork.prod::before{background:linear-gradient(90deg,var(--gold2),var(--pink))}
@@ -37,12 +37,12 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .fork .num{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.3em;color:var(--gold);font-weight:700}
 .fork h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
 .fork .ko{font-size:1.05rem;font-weight:900;margin-bottom:12px}
-.fork p{color:var(--sub);font-size:.93rem;margin-bottom:16px}
+.fork p{color:var(--sub);font-size:.93rem;margin-bottom:16px;flex:1}
 .steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .steps span{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:10px;border:1px solid var(--line);background:#faf8ff;color:#3a3050}
 .fork.prod .steps span{border-color:rgba(122,83,18,.3);background:rgba(122,83,18,.07);color:var(--gold)}
 .fork.letter .steps span{border-color:rgba(199,120,221,.4);background:rgba(199,120,221,.09);color:#a83fb0}
-.go{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,var(--gold2),#e8a020);color:#000}
+.go{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,var(--gold2),#e8a020);color:#000;margin-top:auto;align-self:stretch}
 .fork.letter .go{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
 
 /* ── 안내 ── */
@@ -67,7 +67,7 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
 <main>
   <section class="forks">
     <a class="fork prod" href="https://eaim-musical-maker.vercel.app/">
-      <div class="num">MAKE</div>
+      <div class="num">MAKE · 창작</div>
       <h2>Production</h2>
       <div class="ko">🎬 EAIM 프로덕션 · 공연 제작</div>
       <p>한 편의 이야기로 대본·노래·그림·음향을 직접 만들고, 상영해서 영상으로 남기고, 포스터로 알리고, 평론까지 쓰는 제작사 활동이에요. 일반 뮤지컬과 음악낭독극, 전문가 과정을 고를 수 있어요.</p>
@@ -76,7 +76,7 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
     </a>
 
     <a class="fork letter" href="https://eaimmusic-midia-letter.vercel.app/">
-      <div class="num">LISTEN</div>
+      <div class="num">LISTEN · 감상</div>
       <h2>Media Letter</h2>
       <div class="ko">🎨 미디어레터 · 감상과 창작표현</div>
       <p>음악을 듣고 느낀 것을 그림으로 표현해요. 감상 장면을 모아 슬라이드쇼로 보고, 음악 신문·음악 편지·음악 인터뷰로 기록해서 서논술형 평가 자료로도 쓸 수 있어요.</p>
@@ -85,7 +85,7 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
     </a>
 
     <a class="fork play" href="play/index.html">
-      <div class="num">PLAY</div>
+      <div class="num">PLAY · 연주</div>
       <h2>Playroom</h2>
       <div class="ko">🎹 연주실 · 연주와 작곡</div>
       <p>코드를 넣으면 건반이 켜지고, 기분을 고르면 밴드가 반주해요. 이야기로 멜로디를 짓고, 내 관악기의 계이름을 확인해요. 로그인 없이 바로 열려요.</p>
