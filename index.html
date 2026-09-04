@@ -23,9 +23,8 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.4rem);fon
 main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 
 /* ── 두 갈래 ── */
-.forks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:26px}
-@media(max-width:900px){.forks{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.forks{grid-template-columns:1fr}}
+.forks{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px}
+@media(max-width:700px){.forks{grid-template-columns:1fr}}
 .fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .fork:hover{border-color:var(--purple);transform:translateY(-3px)}
 .fork::before{content:'';position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px}
@@ -35,7 +34,7 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .fork.play .steps span{border-color:rgba(46,125,79,.35);background:rgba(46,125,79,.08);color:var(--green)}
 .fork.play .go{background:linear-gradient(135deg,var(--blue),#2f6a9c);color:#fff}
 .fork .num{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.3em;color:var(--gold);font-weight:700}
-.fork h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
+.fork h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
 .fork .ko{font-size:1.05rem;font-weight:900;margin-bottom:12px}
 .fork p{color:var(--sub);font-size:.93rem;margin-bottom:16px;flex:1}
 .steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
@@ -61,7 +60,7 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
 <header class="marquee">
   <div class="eyebrow">EAIM · MUSIC CLASS</div>
   <h1>음악과 플랫폼</h1>
-  <p class="lead">만들고 싶다면 프로덕션, 듣고 느낀 것을 남기고 싶다면 미디어레터, 직접 치고 불고 싶다면 연주실로 들어가세요.</p>
+  <p class="lead">만들고 싶다면 프로덕션으로, 듣고 느낀 것을 그림과 글로 남기고 싶다면 미디어레터로 들어가세요.</p>
 </header>
 
 <main>
@@ -82,15 +81,6 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
       <p>음악을 듣고 느낀 것을 그림으로 표현해요. 감상 장면을 모아 슬라이드쇼로 보고, 음악 신문·음악 편지·음악 인터뷰로 기록해서 서논술형 평가 자료로도 쓸 수 있어요.</p>
       <div class="steps"><span>🎧 감상</span><span>🎨 이미지 창작</span><span>🎬 슬라이드쇼</span><span>📰 신문·편지·인터뷰</span></div>
       <span class="go">미디어레터 입장 →</span>
-    </a>
-
-    <a class="fork play" href="https://eaim-play.vercel.app/">
-      <div class="num">PLAY · 연주</div>
-      <h2>Playroom</h2>
-      <div class="ko">🎹 연주실 · 연주와 작곡</div>
-      <p>코드를 넣으면 건반이 켜지고, 기분을 고르면 밴드가 반주해요. 이야기로 멜로디를 짓고, 내 관악기의 계이름을 확인해요. 로그인 없이 바로 열려요.</p>
-      <div class="steps"><span>🎹 건반실</span><span>🎸 합주실</span><span>🎼 작곡실</span><span>🎺 관악실</span></div>
-      <span class="go">연주실 입장 →</span>
     </a>
   </section>
 
