@@ -3,154 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>음악과 성취기준 · 루브릭 — EAIM</title>
+<title>음악과 플랫폼 — EAIM</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-<script src="music-standards.js"></script>
 <style>
 :root{--paper:#fdfbf6;--ink:#170f22;--sub:#5a4f70;--line:rgba(124,58,237,.22);--gold:#7a5312;--gold2:#d4a843;--purple:#7c3aed;--pink:#c778dd;--blue:#5DADE2;--green:#2e7d4f;--slate:#1f1730}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Serif KR',serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7}
+body{font-family:'Noto Serif KR',serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.7;
+  background-image:radial-gradient(ellipse at 15% 0%,rgba(124,58,237,.07),transparent 45%),radial-gradient(ellipse at 90% 100%,rgba(93,173,226,.07),transparent 45%)}
 a{color:inherit;text-decoration:none}
-button,input,select{font-family:inherit;font-size:inherit}
-header{background:var(--slate);color:#fff;padding:36px 20px 30px}
-.hin{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.eyebrow{font-family:'Cormorant Garamond',serif;font-size:.95rem;letter-spacing:.35em;color:var(--gold2);font-weight:700}
-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;line-height:1;margin:4px 0 6px}
-.lead{color:rgba(255,255,255,.6);font-size:.9rem;max-width:640px}
-.back{color:rgba(255,255,255,.55);font-size:.82rem;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:5px 10px}
-main{max-width:1080px;margin:0 auto;padding:24px 20px 90px}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
-.tab{padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:700;color:var(--sub)}
-.tab.on{background:var(--slate);color:#fff;border-color:var(--slate)}
-.dom{display:none}.dom.on{display:block}
-.domhead{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-@media(max-width:760px){.domhead{grid-template-columns:1fr}}
-.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.box h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);margin-bottom:6px}
-.box p,.box li{font-size:.9rem;color:var(--sub)}
-.box ul{padding-left:18px}
-.area table{width:100%;border-collapse:collapse;font-size:.8rem}
-.area th,.area td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
-.area th{background:#faf8ff;font-weight:700;white-space:nowrap}
-.std{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
-.std .code{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);letter-spacing:.05em}
-.std h2{font-size:1.08rem;font-weight:900;margin:2px 0 10px}
-.lv{display:grid;grid-template-columns:34px 1fr;gap:6px 10px;font-size:.86rem;margin-bottom:10px}
-.lv b{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1rem}
-.lvA{background:#2e7d4f}.lvB{background:#2f7ab8}.lvC{background:#a05a00}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}
-.chips span{font-size:.76rem;font-weight:700;padding:3px 9px;border-radius:9px;border:1px solid var(--line);background:#faf8ff;color:#3a3050}
-.ev{font-size:.8rem;color:var(--sub)}
-.ev b{color:var(--ink)}
-details{margin-top:10px}
-summary{cursor:pointer;font-size:.86rem;font-weight:700;color:var(--purple)}
-.rub{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
-.rub th,.rub td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
-.rub th{background:#faf8ff;white-space:nowrap}
-.rub td:first-child{font-weight:700;white-space:nowrap}
-/* 평가 */
-.grid{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
-.grid table{border-collapse:collapse;font-size:.8rem;min-width:700px}
-.grid th,.grid td{border:1px solid var(--line);padding:5px 6px;text-align:center}
-.grid th{background:#faf8ff;white-space:nowrap}
-.grid td:first-child{text-align:left;white-space:nowrap;font-weight:700}
-.grid select{padding:2px 4px;border:1px solid var(--line);border-radius:6px;background:#fff}
-.grid .sum{font-weight:900}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
-.btn{padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.9rem}
-.btn.p{background:linear-gradient(135deg,var(--gold2),#e8a020);border:0;font-weight:700}
-.in{padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#faf8ff;outline:none;min-width:240px}
-.note{font-size:.8rem;color:var(--sub);margin-top:8px}
-@media print{header,.tabs,.toolbar,.back{display:none!important}.dom{display:block!important;page-break-before:always}.std{break-inside:avoid}body{font-size:12px}}
+
+/* ── 상단 명판 (프로덕션과 같은 무대 커튼 톤) ── */
+.marquee{background:var(--slate);color:#fff;padding:56px 20px 48px;position:relative;overflow:hidden;text-align:center}
+.marquee::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.035) 46px 48px);pointer-events:none}
+.marquee>*{position:relative}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.35em;color:var(--gold2);font-weight:700}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.4rem);font-weight:700;line-height:1;margin:6px 0 12px}
+.lead{color:rgba(255,255,255,.62);font-size:.98rem;max-width:560px;margin:0 auto}
+
+main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
+
+/* ── 두 갈래 ── */
+.forks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:26px}
+@media(max-width:900px){.forks{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.forks{grid-template-columns:1fr}}
+.fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:block;transition:border-color .2s,transform .2s}
+.fork:hover{border-color:var(--purple);transform:translateY(-3px)}
+.fork::before{content:'';position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px}
+.fork.prod::before{background:linear-gradient(90deg,var(--gold2),var(--pink))}
+.fork.letter::before{background:linear-gradient(90deg,var(--pink),var(--blue))}
+.fork.play::before{background:linear-gradient(90deg,var(--blue),var(--green))}
+.fork.play .steps span{border-color:rgba(46,125,79,.35);background:rgba(46,125,79,.08);color:var(--green)}
+.fork.play .go{background:linear-gradient(135deg,var(--blue),#2f6a9c);color:#fff}
+.fork .num{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.3em;color:var(--gold);font-weight:700}
+.fork h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
+.fork .ko{font-size:1.05rem;font-weight:900;margin-bottom:12px}
+.fork p{color:var(--sub);font-size:.93rem;margin-bottom:16px}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.steps span{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:10px;border:1px solid var(--line);background:#faf8ff;color:#3a3050}
+.fork.prod .steps span{border-color:rgba(122,83,18,.3);background:rgba(122,83,18,.07);color:var(--gold)}
+.fork.letter .steps span{border-color:rgba(199,120,221,.4);background:rgba(199,120,221,.09);color:#a83fb0}
+.go{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,var(--gold2),#e8a020);color:#000}
+.fork.letter .go{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
+
+/* ── 안내 ── */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.notes{grid-template-columns:1fr}}
+.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.box h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--gold);margin-bottom:6px}
+.box p{font-size:.88rem;color:var(--sub)}
+.box b{color:var(--ink)}
+footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);letter-spacing:.08em}
+@media(prefers-reduced-motion:reduce){.fork{transition:none}}
 </style>
 </head>
 <body>
-<header><div class="hin">
-  <div><div class="eyebrow">EAIM · MUSIC CLASS · ASSESS</div><h1>성취기준과 루브릭</h1>
-    <p class="lead">2022 개정 교육과정 음악과의 세 영역(연주·감상·창작) 13개 성취기준을 EAIM의 실제 활동에 연결하고, 공식 성취수준(A·B·C)과 활동 루브릭을 나란히 둡니다.</p></div>
-  <a class="back" href="../index.html">← 음악과 플랫폼</a>
-</div></header>
+
+<header class="marquee">
+  <div class="eyebrow">EAIM · MUSIC CLASS</div>
+  <h1>음악과 플랫폼</h1>
+  <p class="lead">만들고 싶다면 프로덕션, 듣고 느낀 것을 남기고 싶다면 미디어레터, 직접 치고 불고 싶다면 연주실로 들어가세요.</p>
+</header>
 
 <main>
-  <div class="tabs" id="tabs"></div>
-  <div id="doms"></div>
+  <section class="forks">
+    <a class="fork prod" href="https://eaim-musical-maker.vercel.app/">
+      <div class="num">MAKE</div>
+      <h2>Production</h2>
+      <div class="ko">🎬 EAIM 프로덕션 · 공연 제작</div>
+      <p>한 편의 이야기로 대본·노래·그림·음향을 직접 만들고, 상영해서 영상으로 남기고, 포스터로 알리고, 평론까지 쓰는 제작사 활동이에요. 일반 뮤지컬과 음악낭독극, 전문가 과정을 고를 수 있어요.</p>
+      <div class="steps"><span>📝 대본</span><span>🎵 노래</span><span>🖼 그림</span><span>🎚 음향</span><span>🎬 상영</span><span>📢 홍보</span><span>✍️ 평론</span></div>
+      <span class="go">프로덕션 입장 →</span>
+    </a>
 
-  <section class="dom" id="dom-assess">
-    <div class="box" style="margin-bottom:14px">
-      <h3>평가 기록</h3>
-      <p>학생 이름을 쉼표로 넣으면 표가 생깁니다. 성취기준마다 A·B·C를 고르면 영역별 수준이 자동으로 정리돼요(최빈값, 동률이면 낮은 쪽). 이 기기에 저장되고, CSV로 내보내거나 인쇄할 수 있습니다.</p>
-      <div class="toolbar" style="margin-top:10px">
-        <input class="in" id="roster" placeholder="예: 김민준, 이서아, 박지호">
-        <input class="in" id="cls" placeholder="반 이름 (예: 2학년 3반)" style="min-width:160px">
-        <button class="btn p" onclick="buildGrid()">표 만들기</button>
-        <button class="btn" onclick="exportCsv()">CSV 내보내기</button>
-        <button class="btn" onclick="window.print()">🖨 인쇄</button>
-        <button class="btn" onclick="clearGrid()">지우기</button>
-      </div>
+    <a class="fork letter" href="https://eaimmusic-midia-letter.vercel.app/">
+      <div class="num">LISTEN</div>
+      <h2>Media Letter</h2>
+      <div class="ko">🎨 미디어레터 · 감상과 창작표현</div>
+      <p>음악을 듣고 느낀 것을 그림으로 표현해요. 감상 장면을 모아 슬라이드쇼로 보고, 음악 신문·음악 편지·음악 인터뷰로 기록해서 서논술형 평가 자료로도 쓸 수 있어요.</p>
+      <div class="steps"><span>🎧 감상</span><span>🎨 이미지 창작</span><span>🎬 슬라이드쇼</span><span>📰 신문·편지·인터뷰</span></div>
+      <span class="go">미디어레터 입장 →</span>
+    </a>
+
+    <a class="fork play" href="play/index.html">
+      <div class="num">PLAY</div>
+      <h2>Playroom</h2>
+      <div class="ko">🎹 연주실 · 연주와 작곡</div>
+      <p>코드를 넣으면 건반이 켜지고, 기분을 고르면 밴드가 반주해요. 이야기로 멜로디를 짓고, 내 관악기의 계이름을 확인해요. 로그인 없이 바로 열려요.</p>
+      <div class="steps"><span>🎹 건반실</span><span>🎸 합주실</span><span>🎼 작곡실</span><span>🎺 관악실</span></div>
+      <span class="go">연주실 입장 →</span>
+    </a>
+  </section>
+
+  <section class="notes">
+    <div class="box">
+      <h3>선생님</h3>
+      <p>각 앱에서 <b>구글 계정으로 로그인</b>해 반·모둠과 Gemini API 키를 설정하세요. 초대 QR을 학생에게 나눠주면 됩니다.<br><a href="standards/index.html" style="display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:.85rem;font-weight:700;color:var(--gold)">📋 성취기준·루브릭 보기 →</a></p>
     </div>
-    <div class="grid" id="grid"><p class="note" style="margin:6px">아직 표가 없어요.</p></div>
-    <p class="note">수준 판정은 성취기준별 루브릭의 A·B·C 설명을 근거로 하고, 증거 자료(활동지·녹음·영상·보고서)는 각 성취기준 카드의 "증거"를 참고하세요.</p>
+    <div class="box">
+      <h3>학생</h3>
+      <p>선생님이 준 <b>초대 링크(QR)</b>로 바로 입장하세요. 프로덕션의 오디오 믹서와 슬라이드쇼는 로그인 없이도 열립니다.</p>
+    </div>
   </section>
 </main>
 
-<script>
-'use strict';
-const D=window.MUSIC_STANDARDS.domains;
-const tabs=document.getElementById('tabs'), doms=document.getElementById('doms');
-const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-D.forEach((d,i)=>{
-  const t=document.createElement('button'); t.className='tab'+(i===0?' on':''); t.textContent=`${d.emoji} ${d.name} (${d.standards.length})`; t.onclick=()=>show('dom-'+d.id,t); tabs.appendChild(t);
-  const sec=document.createElement('section'); sec.className='dom'+(i===0?' on':''); sec.id='dom-'+d.id;
-  sec.innerHTML=`
-    <div class="domhead">
-      <div class="box"><h3>${d.emoji} ${d.name} 영역 — EAIM에서는</h3><ul>${d.apps.map(a=>`<li>${esc(a)}</li>`).join('')}</ul></div>
-      <div class="box area"><h3>영역별 성취수준</h3><table><tr><th></th><th>지식·이해</th><th>과정·기능</th><th>가치·태도</th></tr>
-        ${['A','B','C'].map(L=>`<tr><th><b class="lv${L}" style="display:inline-block;width:24px;height:24px;line-height:24px;border-radius:50%;color:#fff;text-align:center">${L}</b></th><td>${esc(d.area[L].지식이해)}</td><td>${esc(d.area[L].과정기능)}</td><td>${esc(d.area[L].가치태도)}</td></tr>`).join('')}</table></div>
-    </div>
-    ${d.standards.map(s=>`<article class="std">
-      <div class="code">[${s.code}]</div><h2>${esc(s.text)}</h2>
-      <div class="lv">${['A','B','C'].map(L=>`<b class="lv${L}">${L}</b><div>${esc(s.levels[L])}</div>`).join('')}</div>
-      <div class="chips">${s.activity.map(a=>`<span>${esc(a)}</span>`).join('')}</div>
-      <div class="ev"><b>증거</b> · ${esc(s.evidence)}</div>
-      <details open><summary>활동 루브릭</summary>
-        <table class="rub"><tr><th>평가 요소</th><th>A</th><th>B</th><th>C</th></tr>
-        ${s.rubric.map(r=>`<tr><td>${esc(r.item)}</td><td>${esc(r.A)}</td><td>${esc(r.B)}</td><td>${esc(r.C)}</td></tr>`).join('')}</table>
-      </details>
-    </article>`).join('')}`;
-  doms.appendChild(sec);
-});
-const at=document.createElement('button'); at.className='tab'; at.textContent='📋 평가 기록'; at.onclick=()=>show('dom-assess',at); tabs.appendChild(at);
-function show(id,btn){ document.querySelectorAll('.dom').forEach(x=>x.classList.toggle('on',x.id===id)); document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===btn)); }
-
-/* ── 평가 표 ── */
-const KEY='eaim_music_assess';
-const ALL=D.flatMap(d=>d.standards.map(s=>({...s,dom:d.id,domName:d.name})));
-let state={cls:'',names:[],marks:{}};
-try{ state={...state,...JSON.parse(localStorage.getItem(KEY)||'{}')}; }catch{}
-document.getElementById('roster').value=state.names.join(', '); document.getElementById('cls').value=state.cls||'';
-function save(){ localStorage.setItem(KEY,JSON.stringify(state)); }
-function buildGrid(){
-  state.names=document.getElementById('roster').value.split(/[,\n]/).map(s=>s.trim()).filter(Boolean);
-  state.cls=document.getElementById('cls').value.trim(); save(); renderGrid();
-}
-function mode(vals){ const v=vals.filter(Boolean); if(!v.length) return ''; const c={A:0,B:0,C:0}; v.forEach(x=>c[x]++); const m=Math.max(c.A,c.B,c.C); return ['C','B','A'].find(L=>c[L]===m); }
-function renderGrid(){
-  const g=document.getElementById('grid'); if(!state.names.length){ g.innerHTML='<p class="note" style="margin:6px">아직 표가 없어요.</p>'; return; }
-  g.innerHTML=`<table><tr><th>학생</th>${D.map(d=>`<th colspan="${d.standards.length}" style="background:${d.color}18;color:${d.color}">${d.emoji} ${d.name}</th>`).join('')}${D.map(d=>`<th style="background:#f3ecff">${d.name}<br>수준</th>`).join('')}</tr>
-    <tr><th></th>${ALL.map(s=>`<th title="${esc(s.text)}">${s.code.replace('9음','')}</th>`).join('')}${D.map(()=>'<th></th>').join('')}</tr>
-    ${state.names.map(n=>`<tr><td>${esc(n)}</td>${ALL.map(s=>`<td><select data-n="${esc(n)}" data-c="${s.code}"><option value=""></option>${['A','B','C'].map(L=>`<option ${state.marks[n]?.[s.code]===L?'selected':''}>${L}</option>`).join('')}</select></td>`).join('')}${D.map(d=>`<td class="sum" id="sum-${esc(n)}-${d.id}"></td>`).join('')}</tr>`).join('')}</table>`;
-  g.querySelectorAll('select').forEach(sel=>sel.onchange=()=>{ const n=sel.dataset.n; state.marks[n]=state.marks[n]||{}; state.marks[n][sel.dataset.c]=sel.value; save(); sums(n); });
-  state.names.forEach(sums);
-}
-function sums(n){ D.forEach(d=>{ const el=document.getElementById(`sum-${n}-${d.id}`); if(el) el.textContent=mode(d.standards.map(s=>state.marks[n]?.[s.code])); }); }
-function exportCsv(){
-  const head=['학생',...ALL.map(s=>s.code),...D.map(d=>d.name+' 수준')];
-  const rows=state.names.map(n=>[n,...ALL.map(s=>state.marks[n]?.[s.code]||''),...D.map(d=>mode(d.standards.map(s=>state.marks[n]?.[s.code])))]);
-  const csv='\uFEFF'+[head,...rows].map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
-  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})); a.download=`음악과_성취수준_${state.cls||'기록'}.csv`; a.click();
-}
-function clearGrid(){ if(!confirm('평가 기록을 지울까요?')) return; state={cls:'',names:[],marks:{}}; save(); document.getElementById('roster').value=''; renderGrid(); }
-renderGrid();
-</script>
+<footer>EAIM · Emotion · Artscape · Interactive · Musicalization</footer>
 </body>
 </html>
