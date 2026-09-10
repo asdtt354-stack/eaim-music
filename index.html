@@ -26,7 +26,7 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .forks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:26px}
 @media(max-width:900px){.forks{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.forks{grid-template-columns:1fr}}
-.fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;cursor:pointer}
 .fork:hover{border-color:var(--purple);transform:translateY(-3px)}
 .fork::before{content:'';position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px}
 .fork.prod::before{background:linear-gradient(90deg,var(--gold2),var(--pink))}
@@ -45,7 +45,10 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .steps span{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:10px;border:1px solid var(--line);background:#faf8ff;color:#3a3050}
 .fork.prod .steps span{border-color:rgba(122,83,18,.3);background:rgba(122,83,18,.07);color:var(--gold)}
 .fork.letter .steps span{border-color:rgba(199,120,221,.4);background:rgba(199,120,221,.09);color:#a83fb0}
-.go{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,var(--gold2),#e8a020);color:#000;margin-top:auto;align-self:stretch}
+.goes{display:flex;gap:8px;margin-top:auto;align-items:stretch}
+.go{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,var(--gold2),#e8a020);color:#000}
+.guide{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#faf8ff;color:var(--gold);font-size:.82rem;font-weight:700;white-space:nowrap}
+.guide:hover{border-color:var(--purple);color:var(--purple)}
 .fork.letter .go{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff}
 
 /* ── 안내 ── */
@@ -69,38 +72,42 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
 
 <main>
   <section class="forks">
-    <a class="fork prod" href="https://eaim-musical-maker.vercel.app/">
+    <div class="fork prod" onclick="if(!event.target.closest('a'))location.href='https://eaim-musical-maker.vercel.app/'">
       <div class="num">MAKE · 창작</div>
       <h2>Production</h2>
       <div class="ko">🎬 EAIM 프로덕션 · 공연 제작</div>
       <p>한 편의 이야기로 대본·노래·그림·음향을 직접 만들고, 상영해서 영상으로 남기고, 포스터로 알리고, 평론까지 쓰는 제작사 활동이에요. 일반 뮤지컬과 음악낭독극, 전문가 과정을 고를 수 있어요.</p>
       <div class="steps"><span>📝 대본</span><span>🎵 노래</span><span>🖼 그림</span><span>🎚 음향</span><span>🎬 상영</span><span>📢 홍보</span><span>✍️ 평론</span></div>
-      <span class="go">프로덕션 입장 →</span>
-    </a>
+      <div class="goes"><a class="go" href="https://eaim-musical-maker.vercel.app/">프로덕션 입장 →</a><a class="guide" href="guide.html#s3" onclick="event.stopPropagation()" title="이 갈래의 교사 가이드">📘 가이드</a></div>
+    </div>
 
-    <a class="fork letter" href="https://eaimmusic-midia-letter.vercel.app/">
+    <div class="fork letter" onclick="if(!event.target.closest('a'))location.href='https://eaimmusic-midia-letter.vercel.app/'">
       <div class="num">LISTEN · 감상</div>
       <h2>Media Letter</h2>
       <div class="ko">🎨 미디어레터 · 감상과 창작표현</div>
       <p>음악을 듣고 느낀 것을 그림으로 표현해요. 감상 장면을 모아 슬라이드쇼로 보고, 음악 신문·음악 편지·음악 인터뷰로 기록해서 서논술형 평가 자료로도 쓸 수 있어요.</p>
       <div class="steps"><span>🎧 감상</span><span>🎨 이미지 창작</span><span>🎬 슬라이드쇼</span><span>📰 신문·편지·인터뷰</span></div>
-      <span class="go">미디어레터 입장 →</span>
-    </a>
+      <div class="goes"><a class="go" href="https://eaimmusic-midia-letter.vercel.app/">미디어레터 입장 →</a><a class="guide" href="guide.html#s4" onclick="event.stopPropagation()" title="이 갈래의 교사 가이드">📘 가이드</a></div>
+    </div>
 
-    <a class="fork play" href="https://eaim-play.vercel.app/">
+    <div class="fork play" onclick="if(!event.target.closest('a'))location.href='https://eaim-play.vercel.app/'">
       <div class="num">PLAY · 연주</div>
       <h2>Playroom</h2>
       <div class="ko">🎹 연주실 · 연주와 작곡</div>
       <p>코드를 넣으면 건반이 켜지고, 감정 코드 위에서 즉흥으로 작곡해요. 이야기로 곡을 짓고, 모둠이 밴드로 합주하고, 리듬 블록으로 신코페이션을 익히고, 내 관악기 계이름을 확인해요.</p>
       <div class="steps"><span>🎹 건반실</span><span>🎸 즉흥 작곡실</span><span>🥁 밴드실</span><span>🎼 이야기 작곡실</span><span>🥁 리듬실</span><span>🎺 관악실</span></div>
-      <span class="go">연주실 입장 →</span>
-    </a>
+      <div class="goes"><a class="go" href="https://eaim-play.vercel.app/">연주실 입장 →</a><a class="guide" href="guide.html#s5" onclick="event.stopPropagation()" title="이 갈래의 교사 가이드">📘 가이드</a></div>
+    </div>
   </section>
 
   <section class="notes">
     <div class="box">
-      <h3>선생님</h3>
-      <p>각 앱에서 <b>구글 계정으로 로그인</b>해 반·모둠과 Gemini API 키를 설정하세요. 초대 QR을 학생에게 나눠주면 됩니다.<br><a href="standards/index.html" style="display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:.85rem;font-weight:700;color:var(--gold)">📋 성취기준·루브릭 보기 →</a></p>
+      <h3>선생님 — 처음이세요?</h3>
+      <p><b>구글 로그인 → 초대 QR 만들기</b>, 학생은 <b>QR 찍고 이름 적기</b>. 이것만 하면 수업이 됩니다. 자세한 설정·수업 예시·문제 해결은 교사 가이드에 있어요.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <a href="guide.html" style="padding:8px 14px;border-radius:9px;border:0;background:linear-gradient(135deg,var(--gold2),#e8a020);font-size:.88rem;font-weight:800;color:#1a1200;text-decoration:none">📘 교사 가이드 열기 →</a>
+        <a href="standards/index.html" style="padding:8px 14px;border:1px solid var(--line);border-radius:9px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">📋 성취기준·루브릭</a>
+      </div>
     </div>
     <div class="box">
       <h3>학생</h3>
