@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📘 교사 가이드 | 음악과 플랫폼 · EAIM</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fdfbf6;--ink:#170f22;--sub:#5a4f70;--line:rgba(124,58,237,.22);--gold:#7a5312;--gold2:#d4a843;--purple:#7c3aed;--pink:#c778dd;--blue:#5DADE2;--green:#2e7d4f;--slate:#1f1730;--red:#c0392b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Noto Serif KR',serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.85}
+a{color:var(--purple)}
+header{background:var(--slate);color:#fff;padding:38px 20px 32px;text-align:center}
+.eyebrow{font-family:'Cormorant Garamond',serif;letter-spacing:.35em;color:var(--gold2);font-weight:700;font-size:.92rem}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;line-height:1.1;margin:6px 0 10px}
+.lead{color:rgba(255,255,255,.66);font-size:.94rem;max-width:600px;margin:0 auto 16px}
+.bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.bar a{color:#fff;font-size:.82rem;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:6px 12px;text-decoration:none}
+.bar a.p{background:var(--gold2);color:#1a1200;border-color:var(--gold2);font-weight:700}
+nav.toc{position:sticky;top:0;z-index:10;background:rgba(253,251,246,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 16px;text-align:center;font-size:.85rem}
+nav.toc a{margin:0 8px;text-decoration:none;white-space:nowrap;display:inline-block}
+main{max-width:860px;margin:0 auto;padding:26px 20px 90px}
+h2{font-family:'Cormorant Garamond',serif;font-size:1.75rem;margin:38px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--gold2)}
+h3{font-size:1.12rem;font-weight:900;color:var(--gold);margin:24px 0 8px}
+h4{font-size:.96rem;font-weight:700;color:var(--sub);margin:16px 0 4px}
+p{margin-bottom:12px}
+ul,ol{margin:0 0 14px 22px}li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin:12px 0 18px;background:#fff}
+th,td{border:1px solid var(--line);padding:9px 11px;vertical-align:top;text-align:left}
+th{background:#f3ecff;white-space:nowrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0}
+.card.warn{border-color:rgba(212,168,67,.55);background:#fffdf5}
+.card.stop{border-color:rgba(192,57,43,.35);background:#fff7f6}
+.step{display:grid;grid-template-columns:34px 1fr;gap:12px;margin-bottom:14px}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--gold2);color:#1a1200;display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+.pill{display:inline-block;font-size:.76rem;font-weight:700;padding:2px 9px;border-radius:10px;border:1px solid var(--line);background:#faf8ff;color:#3a3050;margin-right:4px}
+code{background:#f3ecff;border-radius:5px;padding:1px 6px;font-size:.86em;font-family:ui-monospace,Menlo,monospace;word-break:break-all}
+.q{font-weight:900;margin-top:16px}
+.a{color:var(--sub);font-size:.94rem}
+footer{text-align:center;padding:24px 20px 34px;font-size:.78rem;color:rgba(45,36,56,.5);line-height:1.8;border-top:1px solid var(--line);margin-top:30px}
+@media print{header .bar,nav.toc{display:none}body{font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">EAIM · MUSIC CLASS · TEACHER GUIDE</div>
+  <h1>교사 가이드</h1>
+  <p class="lead">처음 여시는 선생님을 위한 안내입니다. <b>1장(처음 한 번 설정)</b>과 <b>2장(오늘 수업 시작하기)</b>만 읽으셔도 수업이 됩니다.</p>
+  <div class="bar"><a class="p" href="index.html">🏠 플랫폼으로</a><a href="standards/index.html">📋 성취기준·루브릭</a><a href="https://eaim-play.vercel.app/guide.html">🎹 연주실 교수법</a><a href="javascript:print()">🖨 인쇄</a></div>
+</header>
+<nav class="toc"><a href="#s1">1 처음 설정</a><a href="#s2">2 수업 시작</a><a href="#s3">3 프로덕션</a><a href="#s4">4 미디어레터</a><a href="#s5">5 연주실</a><a href="#s6">6 문제 해결</a><a href="#s7">7 수업 예시</a><a href="#s8">8 음원·저작권</a></nav>
+
+<main>
+
+<h2 id="s0">여기가 어떤 곳인가요</h2>
+<p>음악과 플랫폼은 세 갈래입니다. 오늘 무엇을 할지에 따라 한 곳만 들어가시면 됩니다.</p>
+<table>
+<tr><th>갈래</th><th>학생이 하는 일</th><th>이런 수업에</th></tr>
+<tr><td><b>🎬 프로덕션</b><br><span class="pill">MAKE · 창작</span></td><td>이야기 → 대본 → 노래 → 그림 → 음향 → 상영 → 홍보 → 평론. 모둠이 제작사가 되어 한 편을 만듭니다.</td><td>창작 뮤지컬, 음악낭독극, 프로젝트 수업</td></tr>
+<tr><td><b>🎨 미디어레터</b><br><span class="pill">LISTEN · 감상</span></td><td>음악을 듣고 느낀 것을 그림·신문·편지·인터뷰로 남깁니다.</td><td>감상 수업, 서논술형 평가</td></tr>
+<tr><td><b>🎹 연주실</b><br><span class="pill">PLAY · 연주</span></td><td>건반·즉흥작곡·밴드·이야기작곡·리듬·초견·관악, 일곱 개의 방.</td><td>가창·기악, 창작 기초, 시창청음</td></tr>
+</table>
+<div class="card warn"><b>딱 하나만 기억하세요.</b> 선생님은 <b>구글 로그인 → 초대 QR 만들기</b>, 학생은 <b>QR 찍고 이름 적기</b>. 나머지는 화면이 안내합니다.</div>
+
+<h2 id="s1">1. 처음 한 번만 하는 설정</h2>
+<p>학교에서 처음 쓰실 때 한 번만 하면 됩니다. 10분 정도 걸립니다.</p>
+
+<div class="step"><div class="n">1</div><div>
+<h3 style="margin-top:0">구글 계정으로 로그인</h3>
+<p>프로덕션(뮤지컬메이커)이나 연주실 교사 페이지에서 <b>구글 계정으로 로그인</b>합니다. 이 계정 아래에 반·모둠·학생 결과물이 모입니다. 세 갈래 모두 <b>같은 계정</b>을 쓰세요.</p>
+</div></div>
+
+<div class="step"><div class="n">2</div><div>
+<h3 style="margin-top:0">Gemini API 키 넣기</h3>
+<p>AI가 대본·노래·그림·질문을 만들려면 키가 필요합니다. <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a>에서 키를 만들고, 결제(선불 크레딧)를 연결한 뒤 <b>교사 대시보드 설정</b>에 붙여넣습니다.</p>
+<ul>
+<li>키는 <b>선생님만</b> 넣습니다. 학생은 키를 보지도, 넣지도 않습니다.</li>
+<li>같은 설정에서 <b>학생 1인 하루 한도</b>(그림 5 · 노래 2 정도)를 정해 두세요.</li>
+<li>비용은 실제 사용량만큼입니다. 한 반 수업이면 대략 1~2만 원 수준입니다.</li>
+</ul>
+</div></div>
+
+<div class="step"><div class="n">3</div><div>
+<h3 style="margin-top:0">Firebase 설정 두 가지 <span style="font-size:.8rem;font-weight:400;color:var(--sub)">(관리자가 한 번)</span></h3>
+<p>이미 되어 있으면 넘어가셔도 됩니다. 로그인이 안 되거나 "권한 없음" 오류가 날 때만 확인하세요.</p>
+<ul>
+<li><b>Authentication → Settings → 승인된 도메인</b>에 쓰는 주소를 추가:
+<br><code>eaim-music.vercel.app</code> <code>eaim-musical-maker.vercel.app</code> <code>eaim-play.vercel.app</code> <code>eaimmusic-midia-letter.vercel.app</code></li>
+<li><b>Firestore → 규칙</b>에 학생(로그인 없이 들어옴)이 제출할 수 있도록 허용하는 블록이 필요합니다. 자세한 규칙은 각 앱의 README에 있습니다.</li>
+</ul>
+</div></div>
+
+<div class="step"><div class="n">4</div><div>
+<h3 style="margin-top:0">반·모둠 만들고 QR 뽑기</h3>
+<p>교사 페이지에서 반·모둠 이름을 넣으면 <b>모둠별 QR</b>이 만들어집니다. 인쇄해서 모둠 책상에 두세요. 이 QR 하나로 선생님 키·제출·수업 상황이 모두 연결됩니다.</p>
+</div></div>
+
+<h2 id="s2">2. 오늘 수업 시작하기</h2>
+<h3>선생님</h3>
+<ol>
+<li>교사 페이지 열기 → 오늘 쓸 <b>방</b>을 고르고 QR 인쇄(또는 화면에 띄우기)</li>
+<li>수업 중에는 <b>수업 상황</b> 화면을 열어 두면 누가 어느 단계에 있는지 보입니다</li>
+<li>수업 끝에 <b>제출물</b> 탭에서 결과를 확인하고, 필요하면 CSV로 내려받습니다</li>
+</ol>
+<h3>학생</h3>
+<ol>
+<li>QR을 찍는다 → <b>이름</b>을 적는다 → 방으로 들어간다</li>
+<li>소리가 나야 하므로 <b>시작하기</b> 버튼을 꼭 누른다 (브라우저 규칙입니다)</li>
+<li>헤드폰을 쓴다 (합주·상영은 스피커)</li>
+</ol>
+<div class="card"><b>QR 없이도 되나요?</b> 연주실의 연주·작곡은 QR 없이도 다 됩니다. 다만 <b>AI 기능·제출·우리 반 듣기</b>는 QR로 들어와야 열립니다.</div>
+
+<h2 id="s3">3. 프로덕션 <span style="font-size:.9rem;font-weight:400;color:var(--sub)">— 한 편을 만드는 곳</span></h2>
+<p>모둠이 제작사가 되어 7단계를 지나갑니다. 한 차시에 한두 단계면 충분합니다.</p>
+<table>
+<tr><th>단계</th><th>팀</th><th>하는 일 · 남는 것</th></tr>
+<tr><td>1 대본</td><td>대본팀</td><td>주제·장르·인물을 정하면 막별 대본·가사·프롬프트가 만들어집니다 → <b>대본·가사</b></td></tr>
+<tr><td>2 노래</td><td>음악팀</td><td><b>같은 화면</b>에서 넘버마다 "30초 들어보기 / 전체 곡" → <b>넘버 MP3</b>. 🎤 MR 만들기로 반주만 뽑고, 🎻 배경음악으로 대사 밑에 깔 연주곡도 만듭니다</td></tr>
+<tr><td>3 그림</td><td>미술팀</td><td><b>같은 화면</b>에서 막별 배경 프롬프트 아래 "그림 만들기" → <b>배경 이미지</b></td></tr>
+<tr><td>4 음향</td><td>음향팀</td><td>오디오 믹서에서 BGM·MR·효과음 채널 조절, 막마다 큐 저장 → <b>큐 리스트·믹싱 WAV</b></td></tr>
+<tr><td>5 상영</td><td>상영관</td><td>슬라이드쇼로 공연하고 화면 녹화 → <b>공연 영상</b></td></tr>
+<tr><td>6 홍보</td><td>홍보팀</td><td>포스터·티저 이미지와 홍보 문구 → <b>포스터</b></td></tr>
+<tr><td>7 평론</td><td>평론실</td><td>감상 전·후 비교, 감상문 쓰고 AI 첨삭 → <b>감상문</b></td></tr>
+</table>
+<div class="card warn">
+<b>2·3번은 왜 1번과 같은 화면인가요?</b> 노래와 그림은 대본이 있어야 만들 수 있어서, 대본 화면 안의 버튼으로 붙어 있습니다. 대본이 아직 없으면 <b>"1번 대본부터 →"</b>로 안내됩니다.<br>
+<b>대본이 사라진 것처럼 보이면?</b> 뮤지컬메이커를 다시 열었을 때 맨 위에 <b>"📝 이전에 만든 대본 … [이어서 하기]"</b> 띠가 뜹니다. 그걸 누르면 그대로 이어집니다.
+</div>
+<h3>슬라이드쇼(상영관) 사용법</h3>
+<ul>
+<li><b>🎭 대본대로 전체 구성</b> — 모든 막이 "대사 화면 → 노래" 순서가 됩니다. 대사 화면에는 말풍선과 배경음악만 흐릅니다.</li>
+<li><b>🖼 배경만 화면</b> — 노래·가사·말풍선 없이 그림과 음악만. "3년 뒤", "막간" 같은 큰 글씨를 넣을 수 있습니다.</li>
+<li><b>🧹 대사 화면 모두 지우기</b> — 말풍선 없이 노래·그림만 보고 싶은 모둠은 이걸 누르면 원래대로 돌아갑니다.</li>
+<li><b>⏱ 자동 진행</b> — 곡 길이에 맞춰 장면이 넘어갑니다(2분 ÷ 4장면 = 30초씩). 배경음악 켜기/볼륨도 여기 있습니다.</li>
+<li><b>⏺ 녹화</b> — 버튼과 커서가 모두 숨겨진 깨끗한 영상이 만들어집니다. 공유 창에서 <b>"이 탭"</b>과 <b>탭 오디오 공유</b>를 켜 주세요. 끝낼 땐 <b>R</b> 또는 <b>Esc</b>.</li>
+</ul>
+
+<h2 id="s4">4. 미디어레터 <span style="font-size:.9rem;font-weight:400;color:var(--sub)">— 듣고 남기는 곳</span></h2>
+<ul>
+<li>음악을 듣고 떠오른 장면을 <b>그림</b>으로 만들고, 감상 장면을 모아 <b>슬라이드쇼</b>로 봅니다</li>
+<li><b>음악 신문 · 음악 편지 · 음악 인터뷰</b>로 기록하면 서논술형 평가 자료가 됩니다</li>
+<li>교사 화면에서 학생별 활동을 열어 볼 수 있습니다</li>
+</ul>
+
+<h2 id="s5">5. 연주실 <span style="font-size:.9rem;font-weight:400;color:var(--sub)">— 몸으로 익히는 곳</span></h2>
+<table>
+<tr><th>방</th><th>하는 일</th></tr>
+<tr><td>🎹 건반실</td><td>코드를 넣으면 눌러야 할 건반이 켜지고, 자동 반주가 마디마다 넘어갑니다</td></tr>
+<tr><td>🎸 즉흥 작곡실</td><td>기분에 맞는 코드 위에서 마디·구절 단위로 멜로디를 녹음 → 악보·MIDI로 남깁니다. <b>녹음은 느리게, 재생은 제 속도로</b></td></tr>
+<tr><td>🥁 밴드실</td><td>팀원마다 악기를 정하고 운지·오른손 패턴을 보며 연습 → 지휘자 화면으로 합주. <b>같은 곡, 세 단계</b>로 실력이 달라도 함께 칩니다</td></tr>
+<tr><td>🎼 이야기 작곡실</td><td>이야기를 세 장면으로 나누고 4박 동기를 변주해 12마디 곡으로 키웁니다</td></tr>
+<tr><td>🥁 리듬실</td><td>숫자 리듬(일 이 삼 사) 격자로 리듬을 만들면 <b>신코페이션이 보라색</b>으로 보입니다. 맞혀 치기·듣기 퀴즈</td></tr>
+<tr><td>🎼 초견실</td><td>매번 새 4마디 악보. 선율·화음 초견과 음정(완전4도·증4도) 듣고 맞히기</td></tr>
+<tr><td>🎺 관악실</td><td>원곡 계이름을 B♭·E♭·F 악기 계이름으로 실시간 이조</td></tr>
+</table>
+<p>수업 설계와 성취기준 연결은 <a href="https://eaim-play.vercel.app/guide.html" target="_blank">연주실 교수법</a>에 자세히 있습니다.</p>
+
+<h2 id="s6">6. 이럴 땐 이렇게 <span style="font-size:.9rem;font-weight:400;color:var(--sub)">— 자주 묻는 것</span></h2>
+
+<div class="q">소리가 안 나요</div>
+<div class="a">첫 화면의 <b>시작하기</b>를 눌렀는지 확인하세요. 브라우저는 사용자가 뭔가 누르기 전엔 소리를 못 냅니다. 악기 샘플을 받는 데 몇 초 걸리므로 그동안은 임시 소리가 납니다.</div>
+
+<div class="q">화면이 예전 모습이에요 / 버튼이 안 보여요</div>
+<div class="a">브라우저가 옛 파일을 기억하고 있는 겁니다. <b>시크릿 창</b>으로 열거나 새로고침을 두어 번 하세요.</div>
+
+<div class="q">구글 로그인 창이 안 떠요</div>
+<div class="a">팝업 차단입니다. 주소창 오른쪽 끝의 차단 아이콘을 눌러 <b>허용</b>하세요. "이 도메인은 승인되지 않았습니다"가 뜨면 1장 3번(승인된 도메인)을 확인하세요.</div>
+
+<div class="q">"권한이 없습니다"(Missing or insufficient permissions)</div>
+<div class="a">Firestore 규칙이 그 경로를 막고 있습니다. 관리자에게 1장 3번을 확인해 달라고 하세요.</div>
+
+<div class="q">AI가 "요청이 몰려서 기다렸다 다시 보내요"라고 해요</div>
+<div class="a">정상입니다. 30명이 같은 순간에 누르면 순서대로 처리됩니다. 잠시 뒤 결과가 나옵니다. 모둠 대표부터 차례로 누르게 하면 더 부드럽습니다.</div>
+
+<div class="q">그림·노래가 안 만들어져요</div>
+<div class="a">교사 대시보드에서 <b>미디어 생성이 켜져</b> 있는지, <b>학생 하루 한도</b>가 남았는지, Gemini 크레딧 잔액이 있는지 확인하세요.</div>
+
+<div class="q">모둠끼리 공유가 안 돼요 (밴드실)</div>
+<div class="a">모둠 QR(<code>?teacher=…&group=…</code>)로 들어와야 하고, 코드를 넣은 뒤 <b>"🎯 이 곡으로 정하기"</b>를 눌러야 모둠에 올라갑니다. 다른 기기는 20초 안에 자동으로 받습니다.</div>
+
+<div class="q">악보 사진을 올렸는데 오류가 나요</div>
+<div class="a">PDF는 첫 페이지만 읽습니다. 코드가 2쪽부터 있으면 그 쪽을 사진으로 찍어 올리세요. 코드명이 없는 악보는 AI가 추정하므로 반드시 확인·수정이 필요합니다.</div>
+
+<div class="q">학생 태블릿에서 건반이 작아요</div>
+<div class="a">기기를 <b>가로로</b> 돌리면 건반이 커집니다. 화면에도 안내가 뜹니다.</div>
+
+<h2 id="s7">7. 수업 예시</h2>
+<h3>창작 8차시 (프로덕션 중심)</h3>
+<table>
+<tr><th>차시</th><th>활동</th></tr>
+<tr><td>1</td><td>모둠 만들기 · 제작사 이름 정하기 · 주제와 장르 정해 대본 만들기</td></tr>
+<tr><td>2</td><td>대본 다듬기 · 가사 고쳐 쓰기</td></tr>
+<tr><td>3</td><td>넘버 노래 만들기(30초 → 전체 곡) · MR 만들기</td></tr>
+<tr><td>4</td><td>막별 배경 그림 · 배경음악 만들기</td></tr>
+<tr><td>5</td><td>오디오 믹서에서 큐 만들기</td></tr>
+<tr><td>6</td><td>슬라이드쇼 구성(대사 화면·배경만 화면) · 리허설</td></tr>
+<tr><td>7</td><td>공연 녹화 · 포스터 만들기</td></tr>
+<tr><td>8</td><td>서로 보고 평론 쓰기 · 제출</td></tr>
+</table>
+<h3>연주 4차시 (연주실 중심)</h3>
+<ol>
+<li>리듬실 — 숫자 리듬으로 신코페이션 찾기, 맞혀 치기</li>
+<li>건반실 — 4코드 반주, 자동 반주에 맞춰 짚기</li>
+<li>즉흥 작곡실 — 감정 코드 위에서 4마디 만들기(도깨비 켜고)</li>
+<li>즉흥 작곡실 — 도깨비 끄고 비교, 악보로 남기고 우리 반 듣기</li>
+</ol>
+
+<h2 id="s8">8. 음원과 저작권</h2>
+<div class="card stop">
+<p><b>가장 안전하고 교육적인 음원은 아이들이 만든 곡입니다.</b> 프로덕션에서 만든 넘버를 밴드실·믹서로 가져오면 저작권 걱정 없이 "우리가 만든 노래를 우리가 연주"할 수 있습니다.</p>
+<p>가요를 쓰실 때는 <b>수업 목적 범위</b>를 지켜 주세요. 파일은 수업용 기기에만 두고, 클라우드·게시판·외부 공개는 하지 않으며, 단원이 끝나면 지웁니다. 앱은 음원을 서버로 보내지 않고 브라우저 안에서만 재생하도록 만들어져 있습니다.</p>
+<p>밖으로 내보내는 발표 영상은 <b>저작권 없는 우리 곡</b>으로 만드시길 권합니다.</p>
+</div>
+
+</main>
+<footer>© 2017–2026 <b style="color:#7a5312">박성애</b> · EAIM 교실 (Emotion · Artscape · Interactive · Musicalization)<br>설계·교수법·콘텐츠: 박성애 &nbsp;|&nbsp; 이 플랫폼의 구조와 교수법은 저작권의 보호를 받습니다</footer>
+</body>
+</html>
