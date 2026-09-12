@@ -6,7 +6,7 @@
 <title>음악과 플랫폼 — EAIM</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#fdfbf6;--ink:#170f22;--sub:#5a4f70;--line:rgba(124,58,237,.22);--gold:#7a5312;--gold2:#d4a843;--purple:#7c3aed;--pink:#c778dd;--blue:#5DADE2;--green:#2e7d4f;--slate:#1f1730}
+:root{--paper:#fdfbf6;--ink:#170f22;--sub:#5a4f70;--line:rgba(124,58,237,.22);--gold:#7a5312;--gold2:#d4a843;--purple:#7c3aed;--pink:#c778dd;--blue:#5DADE2;--green:#2e7d4f;--red:#c8402f;--clay:#a8541f;--slate:#1f1730}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Noto Serif KR',serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.7;
   background-image:radial-gradient(ellipse at 15% 0%,rgba(124,58,237,.07),transparent 45%),radial-gradient(ellipse at 90% 100%,rgba(93,173,226,.07),transparent 45%)}
@@ -23,8 +23,7 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,7vw,4.4rem);fon
 main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 
 /* ── 두 갈래 ── */
-.forks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:26px}
-@media(max-width:900px){.forks{grid-template-columns:1fr 1fr}}
+.forks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
 @media(max-width:620px){.forks{grid-template-columns:1fr}}
 .fork{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;cursor:pointer}
 .fork:hover{border-color:var(--purple);transform:translateY(-3px)}
@@ -37,6 +36,9 @@ main{max-width:980px;margin:0 auto;padding:40px 20px 90px}
 .fork.play::before{background:linear-gradient(90deg,var(--blue),var(--green))}
 .fork.play .steps span{border-color:rgba(46,125,79,.35);background:rgba(46,125,79,.08);color:var(--green)}
 .fork.play .go{background:linear-gradient(135deg,var(--blue),#2f6a9c);color:#fff}
+.fork.gugak::before{background:linear-gradient(90deg,var(--red),var(--gold2))}
+.fork.gugak .steps span{border-color:rgba(200,64,47,.35);background:rgba(200,64,47,.08);color:var(--clay)}
+.fork.gugak .go{background:linear-gradient(135deg,var(--red),var(--clay));color:#fff}
 .fork .num{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.3em;color:var(--gold);font-weight:700}
 .fork h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;line-height:1.05;margin:6px 0 2px}
 .fork .ko{font-size:1.05rem;font-weight:900;margin-bottom:12px}
@@ -67,7 +69,7 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
 <header class="marquee">
   <div class="eyebrow">EAIM · MUSIC CLASS</div>
   <h1>음악과 플랫폼</h1>
-  <p class="lead">만들고 싶다면 프로덕션, 듣고 느낀 것을 남기고 싶다면 미디어레터, 직접 치고 불고 싶다면 연주실로 들어가세요.</p>
+  <p class="lead">만들고 싶다면 프로덕션, 듣고 느낀 것을 남기고 싶다면 미디어레터, 직접 치고 불고 싶다면 연주실, 우리 악기를 맡아 함께 연주하고 싶다면 국악실로 들어가세요.</p>
 </header>
 
 <main>
@@ -97,6 +99,15 @@ footer{text-align:center;padding:20px;font-size:.72rem;color:rgba(45,36,56,.35);
       <p>코드를 넣으면 건반이 켜지고, 감정 코드 위에서 즉흥으로 작곡해요. 이야기로 곡을 짓고, 모둠이 밴드로 합주하고, 리듬 블록으로 신코페이션을 익히고, 내 관악기 계이름을 확인해요.</p>
       <div class="steps"><span>🎹 건반실</span><span>🎸 즉흥 작곡실</span><span>🥁 밴드실</span><span>🎼 이야기 작곡실</span><span>🥁 리듬실</span><span>🎺 관악실</span></div>
       <div class="goes"><a class="go" href="https://eaim-play.vercel.app/">입장 →</a><a class="guide" href="guide.html#s5" onclick="event.stopPropagation()" title="이 갈래의 교사 가이드">📘 가이드</a></div>
+    </div>
+
+    <div class="fork gugak" onclick="if(!event.target.closest('a'))location.href='https://eaim-gugak.vercel.app/'">
+      <div class="num">GUGAK · 국악</div>
+      <h2>Gugak Room</h2>
+      <div class="ko">🥁 국악실 · 우리 악기 합주</div>
+      <p>한 사람이 한 악기를 맡아 함께 연주하는 방이에요. QR로 들어와 나발·나각·용고·장구·징·자바라 중에서 고르면, 화면의 그림 정간보가 내가 칠 자리를 알려줘요. 호령이 끝나면 합주가 시작됩니다.</p>
+      <div class="steps"><span>🎺 대취타</span><span>🔔 종묘제례악 (준비 중)</span></div>
+      <div class="goes"><a class="go" href="https://eaim-gugak.vercel.app/">입장 →</a></div>
     </div>
   </section>
 
